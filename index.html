@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Website</title>
+  </head>
+  <body>
+    <form onsubmit="handleformadd(event)">
+      <label for="title">Bookmark title :</label>
+      <input type="text" id="title" required />
+
+      <label for="link">Bookmark Link :</label>
+      <input type="url" id="link" required />
+
+      <button id="add-btn">Add</button>
+    </form>
+    <ul id="userlist">
+      All Bookmarks
+    </ul>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
