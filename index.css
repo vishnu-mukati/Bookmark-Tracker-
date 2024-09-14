@@ -1,0 +1,104 @@
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1em;
+    background-color: aqua;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+
+}
+
+/* why i cant not not give thge name of the using and thgejh falling and tghe remn */
+
+/* input[type ="text"]{
+    background: #000;
+} */
+
+#title {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 12px;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    background: #ffffff;
+}
+
+#link {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 12px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    background: #ffffff;
+}
+
+label {
+    display: block;
+    margin: 0.5em 0;
+    font-weight: bold;
+    color: #333;
+}
+
+button {
+    padding: 11px; 
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 1s;
+    background: #40fa7e;
+    color: rgb(0, 0, 0);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+#add-btn:hover{
+    background-color: #526fff;
+    color: white;
+}
+
+button:hover {
+    background-color: rgb(105, 85, 235);
+    color: white;
+}
+
+.delete-btn {
+    background-color: #414ee1;; 
+    color: white;
+    border: none;
+    padding: 11px 3px;
+    margin: 2px 0px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4fd3c8;
+    border-radius: 4px;
+    padding: 2px;
+    margin: 4px 0;
+}
+
+.bookmark-link {
+    color: #002aff;
+    text-decoration: none;
+}

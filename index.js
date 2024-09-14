@@ -10,9 +10,30 @@ function handleformadd(event) {
     link,
   };
   
+  async function postrequest(){
+     try{
+      await axios
+      .post(
+          "https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks",
+          obj
+        )
+
+        .then((response) => {
+            console.log(response);
+            showuserscreen(response.data);
+        })
+        .catch((error) => {
+            document.body.innerHTML =
+            document.body.innerHTML + "<h4>Something gone wrong </h4>";
+            console.log(error);
+        });
+     }catch(error){
+        console.log(error);
+     }
+  }
   axios
   .post(
-      "https://crudcrud.com/api/9ff4c39bf4cd464c879a7e46e93f25fe/bookmarks",
+      "https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks",
       obj
     )
     .then((response) => {
@@ -22,6 +43,7 @@ function handleformadd(event) {
     .catch((error) => {
         document.body.innerHTML =
         document.body.innerHTML + "<h4>Something gone wrong </h4>";
+        console.log(error);
     });
 
     event.target.title.value = '';
@@ -29,7 +51,7 @@ function handleformadd(event) {
 }
     document.addEventListener("DOMContentLoaded", () => {
       // when the page is reload the dom content is load
-  axios.get("https://crudcrud.com/api/9ff4c39bf4cd464c879a7e46e93f25fe/bookmarks")
+  axios.get("https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks")
     .then((response) => {
         console.log(response);
         
@@ -69,13 +91,14 @@ function showuserscreen(obj) {
 
   let deletebtn = document.createElement("button");
   deletebtn.textContent = "Delete";
+  deletebtn.setAttribute('class','delete-btn');
   li.appendChild(deletebtn);
 
   deletebtn.addEventListener("click", function (event) {
     let id = event.target.parentElement.getAttribute("data-id");
     axios
       .delete(
-        `https://crudcrud.com/api/9ff4c39bf4cd464c879a7e46e93f25fe/bookmarks/${id}`
+        `https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks/${id}`
       )
       .then((response) => {
         console.log(response);
@@ -88,11 +111,12 @@ function showuserscreen(obj) {
 
   let editbtn = document.createElement('button');
   editbtn.textContent = 'Edit';
+  editbtn.setAttribute('class','edit-btn');
 
 
   editbtn.addEventListener('click', function(event){
     let id = event.target.parentElement.getAttribute('data-id');
-    axios.get(`https://crudcrud.com/api/9ff4c39bf4cd464c879a7e46e93f25fe/bookmarks/${id}`)
+    axios.get(`https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks/${id}`)
     .then((response)=>{
       console.log(response.data);
       let obj = response.data;
@@ -102,7 +126,7 @@ function showuserscreen(obj) {
       titlefield.value = obj.title;
       linkfield.value = obj.link;
       
-      axios.delete(`https://crudcrud.com/api/9ff4c39bf4cd464c879a7e46e93f25fe/bookmarks/${id}`)
+      axios.delete(`https://crudcrud.com/api/bfcfbdbd5ad245199207b50702299b29/bookmarks/${id}`)
       .then((response)=>{
         console.log(response);
       })
@@ -117,3 +141,4 @@ function showuserscreen(obj) {
   })
   li.appendChild(editbtn);
 }
+
